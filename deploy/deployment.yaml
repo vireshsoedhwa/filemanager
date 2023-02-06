@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filegator-app
+  namespace: filegator
+spec:
+  selector:
+    matchLabels:
+      app: filegator
+  template:
+    metadata:
+      labels:
+        app: filegator
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: filegator-pvc
+      containers:
+        - name: filegator
+          image: filegator/filegator
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+          volumeMounts:
+          - mountPath: /var/www/filegator/repository
+            name: data
