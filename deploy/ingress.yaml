@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: plweb-ingress
-  namespace: plweb
+  name: filegator-ingress
+  namespace: filegator
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
     nginx.ingress.kubernetes.io/proxy-body-size: 1000m
