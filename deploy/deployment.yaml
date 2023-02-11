@@ -27,8 +27,8 @@ spec:
           image: filegator/filegator
           resources:
             requests:
-              memory: "64Mi"
-              cpu: "250m"
+              memory: "1024Mi"
+              cpu: "500m"
           volumeMounts:
           - name: data
             mountPath: /var/www/filegator/repository
